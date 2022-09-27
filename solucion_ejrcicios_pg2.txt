@@ -1,0 +1,403 @@
+----------------------------------------------------------------------------------
+1038
+----------------------------------------------------------------------------------
+
+X,Y= [int(input()),int(input())]
+if(X == 1):
+    price  = (float) (4.00 * Y)
+elif(X == 2):
+    price  = (float) (4.50 * Y)
+elif(X == 3):
+    price  = (float) (5.00 * Y)
+elif (X == 4):
+    price  = (float) (2.00 * Y);
+elif (X == 5):
+    price  = (float) (1.50 * Y)
+print(f"Total: R$ {price:.2f}")
+----------------------------------------------------------------------------------
+1040
+----------------------------------------------------------------------------------
+
+A,B,C,D = [float(input()),float(input()),float(input()),float(input())]
+A = (A*2+B*3+C*4+D*1)/10
+print(f'Media: {A:.1f}')
+if A>=7.0:
+    print("Aluno aprovado.")
+elif A<5.0:
+    print("Aluno reprovado.")
+elif A>=5.0 and A<7.0:
+    print("Aluno em exame.")
+    N = float(input())
+    print(f'Nota do exame: {N:.1f}')
+    N = (A+N)/2
+    if N>=5.0:
+        print("Aluno aprovado.")
+        print(f'Media final: {N:.1f}')
+    else:
+        print("Aluno reprovado.")
+        print(f'Media final: {N:.1f}')
+----------------------------------------------------------------------------------
+1041
+----------------------------------------------------------------------------------
+
+X,Y=[float(input()),float(input())]
+if(X==0 and Y==0):
+    print("Origem")
+elif(X==0):
+    print("Eixo Y")
+elif(Y==0):
+    print("Eixo X")
+elif(X>0 and Y>0):
+    print("Q1")
+elif(X<0 and Y>0):
+    print("Q2")
+elif(X<0 and Y<0):
+    print("Q3")
+elif(X>0 and Y<0):
+    print("Q4")
+----------------------------------------------------------------------------------
+1042
+----------------------------------------------------------------------------------
+
+X,Y,Z = [int(input()),int(input()),int(input())]
+list = [X,Y,Z]
+list.sort()
+print(f"{list[0]}\n{list[1]}\n{list[2]}")
+print(f"\n{X}\n{Y}\n{Z}")
+
+----------------------------------------------------------------------------------
+1043
+----------------------------------------------------------------------------------
+
+A,B,C = [float(input()),float(input()),float(input())]
+if (A+B)>C and (A+C)>B and (B+C)>A:
+    perimeter = (A+B+C)
+    print(f"Perimetro = {perimeter:0.1f}")
+else:
+    area = 0.5*(A+B)*C
+    print(f"Area = {area:0.1f}")
+----------------------------------------------------------------------------------
+1044
+----------------------------------------------------------------------------------
+
+a,b=[int(input()),int(input())]
+if (a%b==0)or(b%a==0):
+    print("Sao Multiplos")
+else:
+    print("Nao sao Multiplos")
+----------------------------------------------------------------------------------
+1045
+----------------------------------------------------------------------------------
+
+a,b,c= [float(input()),float(input()),float(input())]
+if(a < b):
+    temp = a
+    a = b
+    b = temp
+if(b < c):
+    temp = b
+    b = c
+    c = temp
+if(a < b):
+    temp = a
+    a = b
+    b = temp
+if(a>=(b+c)):
+    print("NAO FORMA TRIANGULO")
+elif(a*a == (b*b+c*c)):
+     print("TRIANGULO RETANGULO")
+elif(a * a > (b*b+ c*c)):
+    print("TRIANGULO OBTUSANGULO")
+elif(a*a<(b*b + c*c)):
+    print("TRIANGULO ACUTANGULO")
+if(a == b and b == c):
+        print("TRIANGULO EQUILATERO")
+elif(a == b or b == c):
+        print("TRIANGULO ISOSCELES")
+----------------------------------------------------------------------------------
+1046
+----------------------------------------------------------------------------------
+
+a,b= [int(input()),int(input())]
+if(a<b):
+    time=b-a
+else:
+    time=b+24-a
+print(f"O JOGO DUROU {time} HORA(S)")
+----------------------------------------------------------------------------------
+1047
+----------------------------------------------------------------------------------
+
+a,c,b,d=[int(input()),int(input()),int(input()),int(input())]
+
+dif=((b*60)+d)-((a*60)+c)
+if(dif<=0):
+    dif+=24*60
+    
+time=dif//60
+minute=dif%60
+print(f"O JOGO DUROU {time} HORA(S) E {minute} MINUTO(S)")
+----------------------------------------------------------------------------------
+1048
+----------------------------------------------------------------------------------
+
+a = float(input())
+if(a>=0 and a<=400):
+	b= a*0.15
+	c=a+b
+	d=15
+elif(a>=400.01 and a<=800.00):
+	b=a*0.12
+	c=a+b
+	d=12
+elif(a>=800.01 and a<=1200.00):
+    b=a*0.1
+    c=a+b
+    d=10
+elif(a>=1200.01 and a<=2000.00):
+	b=a*0.07
+	c=a+b
+	d=7
+elif(a>2000):
+	b=a*0.04
+	c=a+b
+	d=4
+print(f"Novo salario: {c:.2f}")
+print(f"Reajuste ganho: {b:.2f}")
+print(f"Em percentual: {d} %")
+    
+--------------------------------------------------------------------------------
+ 1049  
+--------------------------------------------------------------------------------
+animal1 = input()
+animal2 = input()
+animal3 = input()
+animal =''
+
+if animal1 == 'vertebrado' and animal1 == 'ave' and animal3 == 'carnivoro':
+    animal = 'aguia'
+if animal1 == 'vertebrado' and animal1 == 'ave' and animal3 == 'onivoro':
+    animal = 'pomba'
+
+if animal1 == 'vertebrado' and animal1 == 'mamifero' and animal3 == 'onivoro':
+    animal = 'homem'
+
+if animal1 == 'vertebrado' and animal1 == 'mamifero' and animal3 == 'herbivoro':
+    animal = 'vaca'
+
+if animal1 == 'invertebrado' and animal1 == 'inseto' and animal3 == 'hematofago':
+    animal = 'pulga'
+
+if animal1 == 'invertebrado' and animal1 == 'inseto' and animal3 == 'herbivoro':
+    animal = 'lagarta'
+
+if animal1 == 'invertebrado' and animal1 == 'anelideo' and animal3 == 'hematofago':
+    animal = 'sanguessuga'
+
+if animal1 == 'invertebrado' and animal1 == 'anelideo' and animal3 == 'onivoro':
+    animal = 'minhoca'
+
+print(animal)
+
+--------------------------------------------------------------------------------
+1050 
+--------------------------------------------------------------------------------
+
+CodigoCiudad=int(input())
+if CodigoCiudad==61:
+    print("Brasilia")
+elif CodigoCiudad==71:
+    print("Salvador")
+elif CodigoCiudad==11:
+    print("Sao Paulo")
+elif CodigoCiudad==21:
+    print("Rio de Janeiro")
+elif CodigoCiudad==32:
+    print("Juiz de Fora")
+elif CodigoCiudad==19:
+    print("Campinas")
+elif CodigoCiudad==27:
+    print("Vitoria")
+elif CodigoCiudad==31:
+    print("Belo Horizonte")
+else:
+    print("No encontro Ciudad")
+----------------------------------------------------------------------------------
+1051 
+----------------------------------------------------------------------------------
+Salario = float(input())
+
+if(Salario > 0 and Salario <= 2000):
+ print(f"Isento")
+elif(Salario > 2000 and Salario <= 3000):
+ difer = Salario - 2000
+ Total = difer * 0.08
+ print(f"R$ {Total:0.2f}")
+elif(Salario > 3000 and Salario < 4500):
+ difer = Salario - 3000
+ Total = (difer * 0.18) + (1000 * 0.08)
+ print(f"R$ {Total:0.2f}")
+else:
+ difer = Salario - 4500
+ Total = (difer * 0.28) + (1500 * 0.18) + (1000 * 0.08)
+ print(f"R$ {Total:0.2f}")
+ 
+----------------------------------------------------------------------------------
+1052 
+----------------------------------------------------------------------------------
+Mes=int(input())
+if(Mes==1):
+    print("January")
+elif(Mes==2):
+    print("February")
+elif(Mes==3):
+    print("March")
+elif(Mes==4):
+    print("April")
+elif(Mes==5):
+    print("May")
+elif(Mes==6):
+    print("June")
+elif(Mes==7):
+    print("July")
+elif(Mes==8):
+    print("August")
+elif(Mes==9):
+    print("September")
+elif(Mes==10):
+    print("October")
+elif(Mes==11):
+    print("November")
+elif(Mes==12):
+    print("December")
+
+----------------------------------------------------------------------------------
+ 1059 
+----------------------------------------------------------------------------------
+i = 1
+j = 100
+# iteration
+for numero in range(i,j + 1):
+   # check
+   if numero % 2 == 0:
+      print(numero)
+ 
+----------------------------------------------------------------------------------
+ 1060 
+----------------------------------------------------------------------------------  
+positivos = 0
+for i in range(6):
+    numero = float(input()) -- Lee los numeros
+    if(numero>0):
+       positivos+=1
+print(f'{positivos} valores positivos')
+
+----------------------------------------------------------------------------------
+ 1061 
+----------------------------------------------------------------------------------
+-- *************************no se entiende
+
+----------------------------------------------------------------------------------
+ 1064
+----------------------------------------------------------------------------------
+positivos=0
+total=0.0
+for i in range(1,7):
+    n = float(input())
+    if(n>0):
+        total = total + n
+        positivos=positivos+1
+average = total/positivos
+print(f"{positivos} valores positivos")
+print(f"{average:0.1f}")
+
+----------------------------------------------------------------------------------
+1065
+----------------------------------------------------------------------------------
+CuentaPares=0
+for i in range(5):
+    n = float(input())
+    if(n%2==0):
+        CuentaPares=CuentaPares+1
+print(f"{CuentaPares} valores pares")
+
+----------------------------------------------------------------------------------
+ 1066 
+----------------------------------------------------------------------------------
+
+pares=0
+impares=0
+positivos=0
+negativos=0
+for i in range(5):
+    n = float(input())
+    if(n % 2 == 0):
+         pares = pares+1
+    else:
+        impares =impares+1
+    if (n > 0):
+        positivos =positivos+1
+    elif (n < 0):
+        negativos =negativos+1
+print(f"{pares} valor(es) par(es)")
+print(f"{impares} valor(es) impar(es)")
+print(f"{positivos} valor(es) positivo(s)")
+print(f"{negativos} valor(es) negativo(s)")
+
+----------------------------------------------------------------------------------
+ 1067 
+----------------------------------------------------------------------------------
+numero = int(input())
+for i in range(numero+1):
+    if(i%2==1):
+        print(i)
+
+----------------------------------------------------------------------------------
+
+--- 1070  Imprime los 6 impares siguientes al numero Digitado
+----------------------------------------------------------------------------------
+numero=int(input())
+i=0
+while(i<6):
+    if(numero%2!=0):
+        print(numero)
+        i=i+1
+    numero=numero+1
+
+----------------------------------------------------------------------------------
+--- 1071  Imprime la suma de los dos numero impares en un rango de numeros
+----------------------------------------------------------------------------------
+numero1 = int(input())
+numero2 = int(input())
+i = min(numero1,numero2)+1
+j = max(numero1,numero2)
+if i % 2 == 0:
+    i += 1
+
+sum = 0
+for i in range(i, j, 2):
+    sum += i
+print(sum)
+
+----------------------------------------------------------------------------------
+--- 1072  Indiica de un listado de numeros cuantos estan en el rango de 10 y 20
+----------------------------------------------------------------------------------
+i=int(input())
+inn=0
+out=0
+for i in range(0,i):
+    numero=int(input())
+    if(10<=numero<=20):
+        inn+=1
+    else:
+        out+=1
+print(f"{inn} in")
+print(f"{out} out")
+----------------------------------------------------------------------------------
+1073
+----------------------------------------------------------------------------------
+
+n= int(input())
+for i in range(1,n+1):
+    if(i%2==0):
+        print(f"{i}^2 = {pow(i,2)}")
