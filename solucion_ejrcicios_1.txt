@@ -1,0 +1,85 @@
+Solucion ejercicios
+1.
+print("Hello World!")
+2.
+A = input(int)
+B= input (int)
+X=A+B
+print(X)
+3.
+r = float(input())
+A = 3.14159* r**2
+print("A =",round(A, 4))
+4.
+A= int(input())
+B= int(input())
+SOMA = A + B
+print("SOMA =",SOMA)
+5.
+A= int(input())
+B= int(input())
+PROD = A * B
+print("PROD =",PROD)
+6.
+A= float(input())*0.35
+B= float(input())*0.75
+MEDIA = A + B
+print("MEDIA =",round(MEDIA, 2))
+7.
+A= float(input())*2/10.0
+B= float(input())*3/10.0
+C= float(input())*5/10.0
+MEDIA = A + B +C
+print("MEDIA =",round(MEDIA, 5))
+8.
+A= int(input())
+B= int(input())
+C= int(input())
+D= int(input())
+DIFERENCIA= (A*B-C*D)
+print("DIFERENCIA =",DIFERENCIA)
+9.
+NUMERO_EMPLEADO = int(input())
+HORAS_TRABAJADAS = int(input())
+CANTIDAD_POR_HORAS= float(input())
+SALARIO = HORAS_TRABAJADAS*CANTIDAD_POR_HORAS
+print("NUMERO =",NUMERO_EMPLEADO)
+print("SALARIO = $",round(SALARIO,2))
+10.
+NUMERO_EMPLEADO = int(input())
+HORAS_TRABAJADAS = int(input())
+CANTIDAD_POR_HORAS= float(input())
+SALARIO = HORAS_TRABAJADAS*CANTIDAD_POR_HORAS
+print("NUMERO =",NUMERO_EMPLEADO)
+print("SALARIO = $",round(SALARIO,2))
+11.
+NOMBRE = input()
+SALARIO = float(input())
+VENTAS_MES= float(input())*0.15
+TOTAL = SALARIO+VENTAS_MES
+print("TOTAL = R$",round(TOTAL,2))
+12.
+PRODUCTO_1 = [int(input()),int(input()),float(input())]
+PRODUCTO_2 = [int(input()),int(input()),float(input())]
+VALOR_A_PAGAR = (PRODUCTO_1[1]*PRODUCTO_1[2])+( PRODUCTO_2[1]*PRODUCTO_2[2])
+print("VALOR_A_PAGAR =",VALOR_A_PAGAR)
+13.
+RADIO = int(input())
+VOLUMEN=  (4/3.0)*3.14159*RADIO**3
+print("VOLUMEN =",round(VOLUMEN,3))
+14.
+a,b,c = list(map(float,input().split()))
+
+print("TRIANGULO: {:.3f}".format((A*C)/2))
+print("CIRCULO:   {:.3f}".format(C*C*3.14159))
+print("TRAPEZIO:  {:.3f}".format((((A+B)*C)/2))) 
+print("QUADRADO:  {:.3f}".format(B*B))
+print("RETANGULO: {:.3f}".format(A*B))
+15.
+a = int(input())
+b = int(input())
+c = int(input())
+MaiorAB = (a + b + abs(a - b)) / 2
+MaiorABC = (MaiorAB + c + abs(MaiorAB - c)) / 2
+print ("%d eh o maior" % MaiorABC)
+
