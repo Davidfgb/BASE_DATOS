@@ -149,7 +149,7 @@ db.empleados.insertOne({'_id': 9, 'nombre': 'Pedro',   'apellido': 'Torres', 'Ca
 //2. Insertar dos documentos en la colección de empleados
 db.empleados.insertMany([
     {'_id': 10, 'nombre': 'Karen',   'apellido': 'Torres', 'Cargo': 'Ingeniero en jefe', 'Nomina': 10000000, 'fechadecontratación': new Date('2014-10-01T08:00:00Z'), 'estado':true,"empresa":'Universidad Ean'},
-    {'_id': 11, 'nombre': 'Juan',   'apellido': 'Galvis', 'Cargo': 'Ingeniero en jefe', 'Nomina': 1000000, 'fechadecontratación': new Date('2014-10-01T08:00:00Z'), 'estado':true,"empresa": 'Universidad Ean'}
+    {'_id': 11, 'nombre': 'Juan',   'apellido': 'Galvis', 'Cargo': 'Ingeniero en jefe', 'Nomina': 1000000, 'fechadecontratación': new Date('2014-10-01T08:00:00Z'), 'estado':true,"empresa": 'Universidad Eafit'}
 ]);
 //3. Insertar una colección llamada empresa con los siguientes atributos del documento:
 //    a. nombre 
@@ -175,9 +175,9 @@ db.empresa.updateMany({},{$set:{empresa_id:{$toObjectId:"$153312"}}})
 
 
 //5. Consultar todos los empleados de la empresa x
-db.empleados.find()
+db.empleados.find({empresa:'Universidad Eafit'})
 //7. eliminar todos los empleados de la empresa x
-db.empleados.drop()
+db.empleados.drop({empresa:'Universidad Eafit'})
 //8. actualizar el nombre de una empresa por "Universidad Ean"
 db.empresa.updateOne({nombre:"Universidad Nacional"},{$set:{nombre:"Universidad Ean"}})
 //9. Consultar todos los empleados que su sueldo este entre $1000000 y $6000000
