@@ -145,11 +145,11 @@ $nin - not in - no dentro de
 
 
 //1. Insertar un documento en la colección de empleados
-db.empleados.insertOne({'_id': 9, 'nombre': 'Pedro',   'apellido': 'Torres', 'Cargo': 'Ingeniero en jefe', 'Nomina': 10000000, 'fechadecontratación': new Date('2014-10-01T08:00:00Z'), 'estado':true,"empresa": ObjectId("625909d32d0f29db8087dae1")})
+db.empleados.insertOne({'_id': 9, 'nombre': 'Pedro',   'apellido': 'Torres', 'Cargo': 'Ingeniero en jefe', 'Nomina': 10000000, 'fechadecontratación': new Date('2014-10-01T08:00:00Z'), 'estado':true,"empresa": 'Universidad Ean'})
 //2. Insertar dos documentos en la colección de empleados
 db.empleados.insertMany([
-    {'_id': 10, 'nombre': 'Karen',   'apellido': 'Torres', 'Cargo': 'Ingeniero en jefe', 'Nomina': 10000000, 'fechadecontratación': new Date('2014-10-01T08:00:00Z'), 'estado':true,"empresa": ObjectId("625909d32d0f29db8087dae1")},
-    {'_id': 11, 'nombre': 'Juan',   'apellido': 'Galvis', 'Cargo': 'Ingeniero en jefe', 'Nomina': 10000000, 'fechadecontratación': new Date('2014-10-01T08:00:00Z'), 'estado':true,"empresa": ObjectId("625909d32d0f29db8087dae1")}
+    {'_id': 10, 'nombre': 'Karen',   'apellido': 'Torres', 'Cargo': 'Ingeniero en jefe', 'Nomina': 10000000, 'fechadecontratación': new Date('2014-10-01T08:00:00Z'), 'estado':true,"empresa":'Universidad Ean'},
+    {'_id': 11, 'nombre': 'Juan',   'apellido': 'Galvis', 'Cargo': 'Ingeniero en jefe', 'Nomina': 1000000, 'fechadecontratación': new Date('2014-10-01T08:00:00Z'), 'estado':true,"empresa": 'Universidad Ean'}
 ]);
 //3. Insertar una colección llamada empresa con los siguientes atributos del documento:
 //    a. nombre 
@@ -167,21 +167,23 @@ db.createCollection("empresa",{validator:{$and:[
 db.empresa.insertMany([
     {'_id': 1, 'nombre': 'Universidad Ean',   'direccion': 'Calle 93 # 7-32', 'telefono': '1234567', 'fechadecreacion': new Date('2014-10-01T08:00:00Z')},
     {'_id': 2, 'nombre': 'Universidad Eafit',   'direccion': 'Calle 93 # 7-32', 'telefono': '1234567', 'fechadecreacion': new Date('2014-10-01T08:00:00Z')},
-    {'_id': 3, 'nombre': 'Universidad Eia',   'direccion': 'Calle 93 # 7-32', 'telefono': '1234567', 'fechadecreacion': new Date('2014-10-01T08:00:00Z')},
+    {'_id': 3, 'nombre': 'Universidad Ean',   'direccion': 'Calle 93 # 7-32', 'telefono': '1234567', 'fechadecreacion': new Date('2014-10-01T08:00:00Z')},
     {'_id': 4, 'nombre': 'Universidad Nacional',   'direccion': 'Calle 93 # 7-32', 'telefono': '1234567', 'fechadecreacion': new Date('2014-10-01T08:00:00Z')}
 ]);
 //4. ahora a cada documento hacer agregar otro atributo llamado empresa_id que sea el _id de la empresa
-db.empleados.updateMany({},{$set:{empresa_id:{$toObjectId:"$empresa"}}})
+db.empresa.updateMany({},{$set:{empresa_id:{$toObjectId:"$153312"}}})
+
+
 //5. Consultar todos los empleados de la empresa x
 db.empleados.find()
 //7. eliminar todos los empleados de la empresa x
 db.empleados.drop()
 //8. actualizar el nombre de una empresa por "Universidad Ean"
-db.empresa.updateOne({nombre:"Universidad Ean"},{$set:{nombre:"Universidad Ean"}})
+db.empresa.updateOne({nombre:"Universidad Nacional"},{$set:{nombre:"Universidad Ean"}})
 //9. Consultar todos los empleados que su sueldo este entre $1000000 y $6000000
-db.empleados.find({Nomina:{$gt:1000000,$lt:6000000}})
+db.empleados.find({Nomina:{$gte:1000000,$lte:6000000}})
 //10. sumar todos los sueldos de los empleados de la empresa "Universidad Ean"
-db.empleados.aggregate([{$match:{empresa_id: ObjectId("625909d32d0f29db8087dae1")}},{$group:{_id:"$empresa_id",total:{$sum:"$Nomina"}}}])
+db.empleados.aggregate([{$match:{empresa: 'Universidad Ean'}},{$group:{_id:"$empresa_id",total:{$sum:"$Nomina"}}}])
 //11. Modificar todos los empleados para que tengan un atributo array con comidas favoritas ["pizza","hamburguesa"...]
 db.empleados.updateMany({},{$set:{comidas:["pizza","hamburguesa"]}})
 //12. Contar los empleados que tengan apellido Torres
